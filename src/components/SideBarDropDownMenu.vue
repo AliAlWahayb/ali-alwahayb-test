@@ -1,0 +1,46 @@
+<template>
+    <div class="d-flex mx-3 my-1">
+        <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" class="w-100 h-100">
+        <div class="">
+            <div class="dropdown">
+            <button :class="computed_text_color" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ text }}</button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button">Action</button></li>
+                <li><button class="dropdown-item" type="button">Another action</button></li>
+                <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+            </div>
+        </div>
+        
+    </div>
+</template>
+
+<script>
+export default {
+  props: {
+    icon: {
+      type: String,
+      required: true,
+      default: 'side-bar-tab-icon.svg'
+    },
+    text: {
+      type: String,
+      required: true,
+      default: 'placeholder'
+    },
+    text_color: {
+      type: String,
+      required: true,
+      default: 'text-white'
+    }
+  },
+  computed: {
+    alt_Text() {
+        return this.text + ' icon';
+    },
+    computed_text_color() {
+        return "btn dropdown-toggle " + this.text_color;
+    }
+  }
+}
+</script>
