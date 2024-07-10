@@ -1,9 +1,9 @@
 <template>
-    <button type="button" class="btn w-100">
+    <button type="button" class="btn" >
         <div class="d-flex mx-3 my-1">
-            <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" class=" me-1">
-            <div class="pt-2">
-                <p :class="text_color">{{ text }}</p>
+            <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" class=" me-3">
+            <div class=" text-center d-flex justify-content-center align-items-center">
+                <p :class="computed_text_color" style="margin: 0;">{{ text }}<span v-if="badge" class="badge bg-danger ms-2 rounded-pill">{{badge}}</span></p>
             </div>
             
         </div>
@@ -28,11 +28,19 @@ export default {
       type: String,
       required: true,
       default: 'text-white'
+    },
+    badge: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   computed: {
     alt_Text() {
         return this.text + ' icon';
+    },
+    computed_text_color() {
+        return "text-capitalize " + this.text_color;
     }
   }
 }

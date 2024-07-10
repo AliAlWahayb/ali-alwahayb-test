@@ -26,7 +26,7 @@
               </div>
               <div class="">
                 <div class="d-flex justify-content-center my-3">
-                  <button type="submit" class="btn btn-warning w-100">Log In</button>
+                  <button type="submit" class="btn btn-warning w-100" @click="redirectToHome">Log In</button>
                 </div>
                 <div class="d-flex justify-content-center my-3">
                   <button type="submit" class="btn border  w-100"><img src="../assets/images/google.svg" alt="google logo" class="img-fluid me-2">Log In with Google</button>
@@ -53,6 +53,9 @@ export default {
   methods: {
     toggleShow() {
       this.showPassword = !this.showPassword;
+    },
+    redirectToHome() {
+      this.$router.push('/home');
     }
   }
 };
