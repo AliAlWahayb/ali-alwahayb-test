@@ -40,7 +40,7 @@
   "affiliate": "الشريك",
   "contactUs": "اتصل بنا",
   "permissions": "الأذونات",
-  "language": "English",
+  "language": "اللغة العربية",
   "nightMode": "الوضع الليلي",
   "downloadApps": "تحميل التطبيقات",
   "addNewTestimonial": "إضافة شهادة جديدة",
@@ -56,5 +56,6 @@
   "somethingElse": "شيء آخر هنا",
   "logout": "تسجيل الخروج",
   "name": "علي الوهيب",
-  "nighthMode": "الوضع الليلي"
+  "nighthMode": "الوضع الليلي",
+  "loginLangeuage": "English"
 }

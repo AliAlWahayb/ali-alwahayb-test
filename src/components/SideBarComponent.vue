@@ -18,7 +18,7 @@
         <!-- third row -->
         <div class="row mx-3 mb-3">
             <div @click="changeLang" style="margin-left: -12px;">
-                <SwitchComponent :text="$t('language')" text_color="text-white" toggle_method="placeholder" />
+                <SwitchComponent :text="$t('language')" text_color="text-white" toggle_method="placeholder" :checked_status=isRTL />
             </div>
             <SwitchComponent :text="$t('nighthMode')" text_color="text-white" toggle_method="placeholder" checked_status="true"/>
         </div>
@@ -91,12 +91,27 @@ export default {
             textarea_text: "",
         };
     },
+    computed: {
+        isRTL() {
+            if(this.$i18n.locale === 'AR'){
+                return true;
+            }
+            return false;
+        }
+    },
     methods: {
       changeLang() {
         this.$i18n.locale = this.$i18n.locale === 'EN' ? 'AR' : 'EN';
         this.isRTL = !this.isRTL;
-        // Toggle RTL class on the body or any container element
-        document.body.classList.toggle('rtl', this.isRTL);
+        // // Toggle RTL class on the body or any container element
+        // document.body.classList.toggle('rtl', this.isRTL);
+
+        if(!document.body.classList.contains('rtl')){
+            document.body.classList.add('rtl', this.isRTL);
+        }
+        else{
+            document.body.classList.remove('rtl', this.isRTL);
+        }
       }
     }
 }
