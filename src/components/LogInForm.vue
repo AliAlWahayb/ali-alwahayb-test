@@ -14,10 +14,10 @@
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">{{ $t('password') }}</label>
                 <div class="input-group">
-                  <input v-if="showPassword" type="text" class="input form-control border-end-0" v-model="password" />
-                  <input v-else type="password" class="input form-control border-end-0" v-model="password">
+                  <input v-if="showPassword" type="text" class="input form-control rounded-1" v-model="password" />
+                  <input v-else type="password" class="input form-control rounded-1" v-model="password">
                   <div class="input-group-append">
-                    <button class="btn border border-start-0 rounded-1" type="button" @click="toggleShow" ><i :class="{ 'bi bi-eye-slash float-end': showPassword, 'bi bi-eye float-end': !showPassword }"></i></button>
+                    <button class="btn border rounded-1" type="button" @click="toggleShow" ><i :class="{ 'bi bi-eye-slash float-end': showPassword, 'bi bi-eye float-end': !showPassword }"></i></button>
                   </div>
 
                 </div>
@@ -29,13 +29,13 @@
                   <button type="submit" class="btn btn-warning w-100" @click="redirectToHome">{{ $t('login') }}</button>
                 </div>
                 <div class="d-flex justify-content-center my-3">
-                  <button type="submit" class="btn border  w-100"><img src="../assets/images/google.svg" alt="google logo" class="img-fluid me-2">{{ $t('logInWithGoogle') }}</button>
+                  <button type="submit" class="btn border  w-100"><img src="../assets/images/google.svg" alt="google logo" class="img-fluid mx-2">{{ $t('logInWithGoogle') }}</button>
                 </div>
               </div>
             </form>
           </div>
           <div class="">
-            <a href="#" class="text-muted d-flex justify-content-center text-decoration-none"><i class="bi bi-arrow-left me-2"></i>{{ $t('backToHomePage') }}</a>
+            <a href="#" class="text-muted d-flex justify-content-center text-decoration-none"><i :class="{ 'bi bi-arrow-right mx-2': isRTL, 'bi bi-arrow-left mx-2': !isRTL }"></i>{{ $t('backToHomePage') }}</a>
           </div>
         </div>
 
@@ -49,6 +49,14 @@ export default {
       showPassword: false,
       password: null
     };
+  },
+  computed: {
+    isRTL() {
+            if(this.$i18n.locale === 'AR'){
+                return true;
+            }
+            return false;
+        }
   },
   methods: {
     toggleShow() {
