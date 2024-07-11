@@ -7,22 +7,24 @@
         </div>
         <!-- second row -->
         <div class="row mb-3">
-            <SideBarTab icon="side-bar-tab-icon.svg" text="Home" text_color="text-warning"/>
-            <SideBarCollapse icon="Invoices-and-reports.svg" text="Invoices and reports" text_color="text-white"/>
-            <SideBarTab icon="Services-link.svg" text="Services-Link" text_color="text-white"/>
-            <SideBarTab icon="Videos.svg" text="Videos" text_color="text-white"/>
-            <SideBarTab icon="affiliate.svg" text="Affiliate" text_color="text-white"/>
-            <SideBarTab icon="Contact-us.svg" text="Contact-us" text_color="text-white" badge="10+"/>
-            <SideBarTab icon="Permissions.svg" text="Permissions" text_color="text-white"/>
+            <SideBarTab icon="side-bar-tab-icon.svg" :text="$t('home')" text_color="text-warning"/>
+            <SideBarCollapse icon="Invoices-and-reports.svg" :text="$t('invoicesAndReports')" text_color="text-white"/>
+            <SideBarTab icon="Services-link.svg" :text="$t('servicesLink')" text_color="text-white"/>
+            <SideBarTab icon="Videos.svg" :text="$t('videos')" text_color="text-white"/>
+            <SideBarTab icon="affiliate.svg" :text="$t('affiliate')" text_color="text-white"/>
+            <SideBarTab icon="Contact-us.svg" :text="$t('contactUs')" text_color="text-white" badge="10+"/>
+            <SideBarTab icon="Permissions.svg" :text="$t('permissions')" text_color="text-white"/>
         </div>
         <!-- third row -->
         <div class="row mx-3 mb-3">
-            <SwitchComponent text="اللغة العربية" text_color="text-white" toggle_method="placeholder"/>
-            <SwitchComponent text="Night mode" text_color="text-white" toggle_method="placeholder" checked_status="true"/>
+            <div @click="changeLang" style="margin-left: -12px;">
+                <SwitchComponent :text="$t('language')" text_color="text-white" toggle_method="placeholder" />
+            </div>
+            <SwitchComponent :text="$t('nighthMode')" text_color="text-white" toggle_method="placeholder" checked_status="true"/>
         </div>
         <!-- fourth row -->
         <div class="row mx-3 my-3">
-            <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#popUp">DOWNLOAD APPS</button>
+            <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#popUp">{{ $t('downloadApps') }}</button>
         </div>
     </div>
 
@@ -33,30 +35,30 @@
         <div class="modal-content custom-bg-color">
         <div class="modal-body text-white">
             <div class="d-flex justify-content-between">
-                <h1 class="modal-title fs-5 text-white" id="popUpLabel">Add New Testimonial</h1>
+                <h1 class="modal-title fs-5 text-white" id="popUpLabel">{{ $t('addNewTestimonial') }}</h1>
                 <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><img src="../assets/icons/Close.svg" alt="close button"></button>
             </div>
             <div class=" mb-3">
-                <label class="form-label">User Photo</label>
+                <label class="form-label">{{ $t('userPhoto') }}</label>
                 <div class="custom-border text-center p-5 d-flex-column align-items-center">
                     <img src="../assets/icons/AddImage.svg" alt="add image">
-                    <p>drop your image here or browse </p>
-                    <p class="">max size 5 mB , 35*35 pixcel supported format jpg, png  </p>
+                    <p>{{ $t('dropImageHere') }} </p>
+                    <p class="">{{ $t('maxSize') }} , 35*35 {{ $t('pixcel') }} {{ $t('supportedFormat') }}  </p>
                 </div>
             </div>
 
             <div>
                 <form>
                 <div class="mb-3">
-                    <label for="UserName" class="form-label">User Name</label>
+                    <label for="UserName" class="form-label">{{ $t('userName') }}</label>
                     <input type="text" class="form-control" id="UserName" aria-describedby="UserNameHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="CompanyName" class="form-label">Company Name</label>
+                    <label for="CompanyName" class="form-label">{{ $t('companyName') }}</label>
                     <input  type="text" class="input form-control border-end-0" />
                 </div>
                 <div class="mb-3">
-                    <label for="Content" class="form-label">Content</label>
+                    <label for="Content" class="form-label">{{ $t('content') }}</label>
                     <div class="">
                         <textarea type="text" class="input form-control border-end-0 text-white" style="resize: none;" v-model="textarea_text" rows="4" cols="50" maxlength="150"></textarea>
                         <small class="form-text float-end  text-white p-2" style="transform: translateY(-100%);" ><small class="text-warning fs-6" style="transform: translateY(100%);">{{textarea_text.length}}</small>/150</small>
@@ -65,7 +67,7 @@
                 </form>
             </div>
             <div class="d-flex justify-content-end" style="transform: translateX(13%);">
-                <button type="button" class="btn btn-warning">Save</button>
+                <button type="button" class="btn btn-warning">{{ $t('save') }}</button>
             </div>
         </div>
         </div>
@@ -89,6 +91,11 @@ export default {
             textarea_text: "",
         };
     },
+    methods: {
+      changeLang() {
+        this.$i18n.locale = this.$i18n.locale === 'EN' ? 'AR' : 'EN';
+      }
+    }
 }
 </script>
 

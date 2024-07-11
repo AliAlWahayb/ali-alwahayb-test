@@ -9,9 +9,9 @@
                 </button>
             </p>
             <div class="collapse d-flex-column mx-5" id="collapseExample">
-                <div><button :class="computed_text_color">Action</button></div>
-                <div><button :class="computed_text_color">Another</button></div>
-                <div><button :class="computed_text_color">Something</button></div>
+                <div><button :class="computed_text_color">{{ $t('action') }}</button></div>
+                <div><button :class="computed_text_color">{{ $t('anotherAction') }}</button></div>
+                <div><button :class="computed_text_color">{{ $t('something') }}</button></div>
             </div>
         </div>
     </div>

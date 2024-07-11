@@ -5,9 +5,9 @@
             <div class="dropdown">
             <button :class="computed_text_color" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ text }}</button>
             <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                <li><button class="dropdown-item" type="button">{{ $t('action') }}</button></li>
+                <li><button class="dropdown-item" type="button">{{ $t('anotherAction') }}</button></li>
+                <li><button class="dropdown-item" type="button">{{ $t('something') }}</button></li>
             </ul>
             </div>
         </div>
@@ -18,9 +18,9 @@
             <div class="dropdown">
             <button :class="computed_text_color" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ text }}</button>
             <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button" @click="redirectToLogIn">Log Out</button></li>
+                <li><button class="dropdown-item" type="button">{{ $t('action') }}</button></li>
+                <li><button class="dropdown-item" type="button">{{ $t('anotherAction') }}</button></li>
+                <li><button class="dropdown-item" type="button" @click="redirectToLogIn">{{ $t('logout') }}</button></li>
             </ul>
             </div>
         </div>

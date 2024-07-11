@@ -9,7 +9,7 @@
   
       <div class="col-8 ">
         <div class="row">
-          <a dir="rtl" class="px-5 py-2 h4 text-decoration-none" href="#">اللغه العربيه</a>
+          <a dir="rtl" class="px-5 py-2 h4 text-decoration-none" @click="changeLang" href="#">اللغه العربيه</a>
         </div>
         <!-- LogInForm component -->
         <LogInForm/>
@@ -26,6 +26,11 @@
   export default {
     components: {
       LogInForm
+    },
+    methods: {
+      changeLang() {
+        this.$i18n.locale = this.$i18n.locale === 'EN' ? 'AR' : 'EN';
+      }
     }
   
   }

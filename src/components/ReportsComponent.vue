@@ -3,7 +3,7 @@
         <div class="row mx-3 my-3 text-white">
             <div class="d-flex justify-content-between">
                 <div>
-                    <h4 class="h1">Reports</h4>
+                    <h4 class="h1">{{ $t('reports') }}</h4>
                 </div>
 
                 <div class="d-flex">
@@ -13,8 +13,8 @@
                     <div class="d-flex">
                         <img src="../assets/icons/profile-pic.svg" alt="profile pic" class="me-2">
                         <div class="d-flex flex-column">
-                            <small class="mx-2">Welcome</small>
-                            <SideBarDropDownMenu text="Ali alwahayb" text_color="text-white"
+                            <small class="mx-2">{{ $t('welcome') }}</small>
+                            <SideBarDropDownMenu :text="$t('name')" text_color="text-white"
                                 style="padding: 0; margin: 0" />
                         </div>
                     </div>
@@ -23,43 +23,43 @@
         </div>
         <div class="d-flex mb-3 w-100">
             <div class="d-flex">
-                <label class="pe-3 mt-2 text-white">Select Date</label>
+                <label class="pe-3 mt-2 text-white">{{ $t('selectDate') }}</label>
                 <div class="input-group mb-3 pe-3 w-25">
-                    <input type="text" class="form-control w-75" placeholder="From" aria-label="From date"
+                    <input type="text" class="form-control w-75" :placeholder="$t('from')" aria-label="From date"
                         aria-describedby="button-addon2" v-model="from_date">
                     <input type="date" class="form-control " value="From" v-model="from_date">
                 </div>
                 <div class="input-group mb-3 pe-3 w-25">
-                    <input type="text" class="form-control w-75" placeholder="To" aria-label="To date"
+                    <input type="text" class="form-control w-75" :placeholder="$t('to')" aria-label="To date"
                         aria-describedby="button-addon2" v-model="to_date">
                     <input type="date" class="form-control " value="To" v-model="to_date">
                 </div>
             </div>
             <div class="d-flex h-100">
-                <button type="button" class="btn btn-warning rounded-3 text-white text-capitalize me-3">export to pdf file</button>
-                <button type="button" class="btn btn-warning rounded-3 text-white text-capitalize">export to excel file</button>
+                <button type="button" class="btn btn-warning rounded-3 text-white text-capitalize me-3">{{ $t('exportToPDF') }}</button>
+                <button type="button" class="btn btn-warning rounded-3 text-white text-capitalize">{{ $t('exportToExcel') }}</button>
 
             </div>
         </div>
         <!-- second row -->
         <div class="row d-flex flex-row mb-3 w-100">
-            <CheckBoxCard text="Total sales"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('totalSales')"
+                :discription="$t('checkBoxDiscription')"
                 @messageToOutermost="handleMessageFromInnermost" />
-            <CheckBoxCard text="Total administrative fees"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('totalFees')"
+                :discription="$t('checkBoxDiscription')"
                 checked_status="true" />
-            <CheckBoxCard text="playgrounds"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('playgrounds')"
+                :discription="$t('checkBoxDiscription')"
                 checked_status="true" />
-            <CheckBoxCard text="Total subscription sales"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('subscriptionSales')"
+                :discription="$t('checkBoxDiscription')"
                 checked_status="true" />
-            <CheckBoxCard text="clients"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('clients')"
+                :discription="$t('checkBoxDiscription')"
                 checked_status="true" />
-            <CheckBoxCard text="bank fee"
-                discription="all invoice with many details you can see as clients and amounts and every things "
+            <CheckBoxCard :text="$t('bankFee')"
+                :discription="$t('checkBoxDiscription')"
                 checked_status="true" />
         </div>
 
