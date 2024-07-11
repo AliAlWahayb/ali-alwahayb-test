@@ -66,7 +66,7 @@
                 </div>
                 </form>
             </div>
-            <div class="d-flex justify-content-end" style="transform: translateX(13%);">
+            <div class="d-flex justify-content-center" style="transform: translateX(13%);">
                 <button type="button" class="btn btn-warning">{{ $t('save') }}</button>
             </div>
         </div>
@@ -94,6 +94,9 @@ export default {
     methods: {
       changeLang() {
         this.$i18n.locale = this.$i18n.locale === 'EN' ? 'AR' : 'EN';
+        this.isRTL = !this.isRTL;
+        // Toggle RTL class on the body or any container element
+        document.body.classList.toggle('rtl', this.isRTL);
       }
     }
 }

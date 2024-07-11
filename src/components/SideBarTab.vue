@@ -1,7 +1,7 @@
 <template>
     <button type="button" class="btn" >
         <div class="d-flex mx-3 my-1">
-            <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" class=" me-3">
+            <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" class=" mx-3">
             <div class=" text-center d-flex justify-content-center align-items-center">
                 <p :class="computed_text_color" style="margin: 0;">{{ text }}<span v-if="badge" class="badge bg-danger ms-2 rounded-pill">{{badge}}</span></p>
             </div>

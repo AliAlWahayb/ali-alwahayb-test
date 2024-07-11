@@ -1,6 +1,6 @@
 <template>
     <div v-if="icon" class="d-flex mx-3 my-1">
-        <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text" >
+        <img :src="require(`@/assets/icons/${icon}`)"  :alt="alt_Text" >
         <div class="">
             <div class="dropdown">
             <button :class="computed_text_color" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ text }}</button>

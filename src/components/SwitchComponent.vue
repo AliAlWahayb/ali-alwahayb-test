@@ -3,7 +3,7 @@
     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" :checked="computed_checked_status" @change="sendMessageToOutermost" >
     <label :class="computed_text_color" for="flexSwitchCheckDefault">{{ text }}</label>
     </div>
-    <div v-if="discription" class="ms-5">
+    <div v-if="discription" class="mx-5">
         <p :class="this.text_color + ' text-capitalize'">{{discription}}</p>
     </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     },
     computed: {
         computed_text_color() {
-            return "form-check-label ms-2 text-capitalize " + this.text_color;
+            return "form-check-label mx-2 text-capitalize " + this.text_color;
         },
         computed_checked_status() {
             return Boolean(this.checked_status);

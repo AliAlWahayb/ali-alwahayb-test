@@ -23,6 +23,15 @@
     --bs-body-font-family: 'Trebuchet MS' !important;
     --bs-body-font-weight: 500 !important;
 
+  }
+
+  body.rtl {
+    direction: rtl;
+    margin-right: 3rem !important;
+
+  }
+  .rtl .mx-2 {
+    margin-right: 3rem !important;
 }
 
 </style>

@@ -9,7 +9,7 @@
   
       <div class="col-8 ">
         <div class="row">
-          <a dir="rtl" class="px-5 py-2 h4 text-decoration-none" @click="changeLang" href="#">اللغه العربيه</a>
+          <a dir="rtl" class="px-5 py-2 h4 text-decoration-none" @click="changeLang" href="#">{{ $t('language') }}</a>
         </div>
         <!-- LogInForm component -->
         <LogInForm/>
@@ -27,9 +27,18 @@
     components: {
       LogInForm
     },
+    data() {
+      return {
+        isRTL: false
+      };
+    },
     methods: {
       changeLang() {
         this.$i18n.locale = this.$i18n.locale === 'EN' ? 'AR' : 'EN';
+        //test
+        this.isRTL = !this.isRTL;
+        // Toggle RTL class on the body or any container element
+        document.body.classList.toggle('rtl', this.isRTL);
       }
     }
   
