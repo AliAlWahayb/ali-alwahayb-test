@@ -3,7 +3,7 @@
             <div class="card text-bg-light w-100 mb-3" @click="toggle">
             <div class="card-body">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="test" value="" aria-label="Checkbox for following text input" :checked="computed_checked_status" @click="sendMessageToOutermost">
+                    <input class="form-check-input" type="checkbox" :id="text + 'Checkbox'" value="" aria-label="Checkbox for following text input" :checked="computed_checked_status" @click="sendMessageToOutermost">
                     <h5 class="card-title text-capitalize">{{ text }}</h5>
                 </div>
                 <p class="card-text text-muted">{{ discription }}</p>

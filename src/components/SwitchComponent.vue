@@ -1,7 +1,7 @@
 <template>
     <div class="form-check form-switch d-flex align-items-center">
-    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" :checked="computed_checked_status" @change="sendMessageToOutermost" >
-    <label :class="computed_text_color" for="flexSwitchCheckDefault">{{ text }}</label>
+    <input class="form-check-input" type="checkbox" role="switch" :id="text + 'Switch'" :checked="computed_checked_status" @change="sendMessageToOutermost" >
+    <label :class="computed_text_color" :for="text + 'Switch'">{{ text }}</label>
     </div>
     <div v-if="discription" class="mx-5">
         <p :class="this.text_color + ' text-capitalize'">{{discription}}</p>

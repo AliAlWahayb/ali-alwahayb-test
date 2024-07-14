@@ -61,12 +61,12 @@
                     <label for="Content" class="form-label">{{ $t('content') }}</label>
                     <div class="">
                         <textarea type="text" class="input form-control border-end-0 text-white" style="resize: none;" v-model="textarea_text" rows="4" cols="50" maxlength="150"></textarea>
-                        <small class="form-text float-end  text-white p-2" style="transform: translateY(-100%);" ><small class="text-warning fs-6" style="transform: translateY(100%);">{{textarea_text.length}}</small>/150</small>
                     </div>
                 </div>
                 </form>
             </div>
-            <div class="d-flex justify-content-center" style="transform: translateX(13%);">
+            <div class="d-flex justify-content-between" style="">
+                <small class="form-text float-end  text-white p-2" >{{textarea_text.length}}/150</small>
                 <button type="button" class="btn btn-warning">{{ $t('save') }}</button>
             </div>
         </div>

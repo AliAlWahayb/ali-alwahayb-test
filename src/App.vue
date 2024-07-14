@@ -27,11 +27,14 @@
 
   body.rtl {
     direction: rtl;
-    margin-right: 3rem !important;
+    
 
   }
   .rtl .mx-2 {
     margin-right: 3rem !important;
 }
+
+
+
 
 </style>

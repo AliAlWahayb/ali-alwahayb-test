@@ -1,11 +1,11 @@
 <template>
-    <div v-if="icon" class="d-flex mx-3 my-1">
+    <div v-if="icon" class="d-flex mx-4 my-1">
         <div class="">
             <p>
                 <img :src="require(`@/assets/icons/${icon}`)" :alt="alt_Text">
                 <button :class="computed_text_color" type="button" @click="toggleShow" data-bs-toggle="collapse"
                     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    {{ text }} <i :class="{ 'bi bi-caret-up-fill': show, 'bi bi-caret-down-fill': !show }"></i>
+                    {{ text }}<i :class="{ 'bi bi-caret-up-fill': show, 'bi bi-caret-down-fill': !show }"></i>
                 </button>
             </p>
             <div class="collapse d-flex-column mx-5" id="collapseExample">
