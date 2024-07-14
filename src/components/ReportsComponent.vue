@@ -68,19 +68,3 @@
     }
 </script>
 
-<style>
-input[type=date]{
-  color:white
-}
-::-webkit-datetime-edit-text { color:white}
-::-webkit-datetime-edit-month-field { display: none }
-::-webkit-datetime-edit-day-field { display: none }
-::-webkit-datetime-edit-year-field { display: none }
-::-webkit-calendar-picker-indicator{ 
-  background-image: url('/src/assets/icons/Calender.svg');
-      background-position:center;
-      background-size:cover;
-       background-repeat:no-repeat;
-      color:rgba(204,204,204,0);
-}
-</style>
